@@ -45,7 +45,10 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
     // PDFBox para Android
-    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
+    implementation("com.tom-roush:pdfbox-android:2.0.27.0") {
+        exclude(group = "org.bouncycastle", module = "bcprov-jdk15to18")
+        exclude(group = "org.bouncycastle", module = "bcpkix-jdk15to18")
+    }
 
     // Bouncy Castle (criptografía y CMS)
     implementation("org.bouncycastle:bcprov-jdk18on:1.78.1")
